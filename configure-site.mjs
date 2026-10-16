@@ -5,10 +5,13 @@ import { fileURLToPath } from 'node:url';
 const project = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(project, 'public');
 const indexPath = path.join(publicDir, 'index.html');
-const siteUrl = (process.env.BOOK_SITE_URL || '').trim().replace(/\/$/, '');
+const vercelProductionHost = (process.env.VERCEL_PROJECT_PRODUCTION_URL || '').trim();
+const siteUrl = (process.env.BOOK_SITE_URL || (vercelProductionHost ? `https://${vercelProductionHost}` : '')).trim().replace(/\/$/, '');
 const isVercel = process.env.VERCEL === '1';
 const isProduction = !isVercel || process.env.VERCEL_ENV === 'production';
-const canIndex = isProduction && (!isVercel || Boolean(siteUrl));
+// Production is crawlable even if a custom canonical domain has not been set.
+// Vercel's production host is used as a canonical fallback when available.
+const canIndex = isProduction;
 let html = await readFile(indexPath, 'utf8');
 
 html = html.replace(/\s*<link rel="canonical" href="[^"]*">/g, '');
@@ -18,6 +21,10 @@ if (siteUrl && isProduction) {
 }
 html = html.replace(/<meta name="robots" content="[^"]*">/,
   `<meta name="robots" content="${canIndex ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">`);
+if (siteUrl) {
+  html = html.replace(/(<meta property="og:image" content=")[^"]*(">)/, `$1${siteUrl}/cover.svg$2`);
+  html = html.replace(/(<meta name="twitter:image" content=")[^"]*(">)/, `$1${siteUrl}/cover.svg$2`);
+}
 
 const jsonLd = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
 if (jsonLd) {

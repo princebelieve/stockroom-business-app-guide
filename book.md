@@ -49,7 +49,7 @@ The app is useful when a business needs a repeatable record of what was sold or 
 
 Stockroom is designed for offline-first day-to-day use in supported workflows. Initial registration, connecting devices, subscription checks, remote ordering, and some online services need connectivity. Businesses should synchronize when they need changes shared across devices and review the sync status before depending on cross-device updates.
 
-The Hotel and Nightlife workspaces support room stays, housekeeping readiness, event admissions, QR check-in, and related billing and venue sales. Chapter 17 walks through those workflows, and its market comparison helps owners decide whether the built-in tools fit their property or venue. A business label selects relevant setup suggestions; workspace settings and the actual operating workflow determine what the app can do.
+Hotel and Nightlife workspaces support room reception, housekeeping readiness, event admissions, QR check-in, guest charges and venue sales. Chapter 29 teaches hotel, bed & breakfast and nightclub teams how to set up rooms and events and use these workflows through a normal trading day.
 
 ### Why use it?
 
@@ -60,9 +60,9 @@ The Hotel and Nightlife workspaces support room stays, housekeeping readiness, e
 - **Accountability:** roles and permissions can separate owner configuration from cashier work; reports and histories help review recorded activity.
 - **A path from simple to more organised:** begin with one workspace and add others as the business is ready.
 
-### What it is not
+### A useful way to start
 
-Stockroom is not automatically a full accounting package, prescription system, property-management suite, online ticket marketplace, production scheduler, or universal hardware driver. Choose the app for supported daily workflows, configure it honestly, and pilot it with real devices and staff before relying on it.
+Begin with the work your team handles each day. Set up the matching workspace, enter your real products or rooms, train the people who use it, and add more workflows as your business grows. Stockroom connects sales, stock, customers, staff and operational records in one business app.
 
 ## Chapter 2: Business type, workspace, and catalogue: three separate choices
 
@@ -74,7 +74,7 @@ These three terms answer different questions:
 | Workspace | What kind of operational screen should the staff use? | Order counter for counter service; Product sales for stocked retail |
 | Catalogue | What actual items, services, ingredients, units, categories, prices, and stock does this business use? | Agege bread, 1 loaf, price ₦X, opening stock Y |
 
-Choosing “Hotel” does not enable hotel work. Choosing “Bakery” does not configure recipes. Choosing “Wholesale” does not automatically create case conversions or bulk rates. Owners separately choose workspaces in **Business settings > Available workspaces**, then configure the real catalogue and settings.
+Business type helps owners find useful starting choices. After choosing Hotel and bed & breakfast, turn on Hotel operations in Business settings > Available workspaces, then create the rooms and rates the reception team uses. A bakery can similarly enable Order counter and set up its recipes; a wholesaler can configure the units and prices it sells.
 
 ### First-run starter selection
 
@@ -241,7 +241,7 @@ Business types are searchable in first-run setup and in the Business type task. 
 | Food ingredients and finished goods | kg | Use Product sales for stock; Order counter can record optional single-output batches. No production schedule/multi-output manufacturing. |
 | Bakery and confectionery | piece | Product sales for packaged goods; Order counter for made-to-order selling; configure ingredients, menu/recipes and yield carefully. |
 | Drinks and beverage business | bottle | Product sales for bottles/cans; Tables & tabs for bar tabs where customers run bills. |
-| Hotel | piece | Enable Hotel operations in Available workspaces; configure room register, stays and charges. Not a full PMS. |
+| Hotel and bed & breakfast | room | Enable Hotel operations for the reception desk: set up rooms, manage stays, prepare rooms, check guests in and out, and record room charges. |
 | Nightclub | bottle | Enable Nightlife operations; optionally enable Tables & tabs for bar bills. Configure events/admission and check-in. |
 | Pharmacy stock and medical supplies | pack | Product sales for stock checkout and supported batch/expiry work. No prescriptions or dispensing. |
 | Beauty, cosmetics, and personal care | piece | Product sales; create actual sizes/variants if required. |
@@ -333,15 +333,15 @@ In Available workspaces, turn on **Hotel operations**, **Nightlife operations**,
 
 ### Hotel operations
 
-Configure rooms and their identifiers, then check the availability calendar for the intended dates. Create the guest/stay record with the requested dates and details, review room availability, and save the booking/status. Update the stay as the guest checks in/out. Assign housekeeping staff or schedule where the workflow offers it; record readiness. Add supported folio/extra charges or stocked product charges to the appropriate stay/invoice, then review and settle the invoice. Use customer booking/QR check-in where configured.
+Configure each room with its own room type, bed configuration, maximum guest count, amenities and base rate. These labels are customizable for the property. Check the availability calendar, choose the room and enter a guest count within its limit before saving the stay. The customer portal shows the room details and applies the same guest limit. Update the stay as the guest checks in/out. Assign housekeeping staff or schedule where the workflow offers it; record readiness. Add supported folio/extra charges or stocked product charges to the appropriate stay/invoice, then review and settle the invoice. Use customer booking/QR check-in where configured.
 
-The implementation includes room register, availability, stay status, housekeeping readiness/assignment/schedule, invoices and folio charges. It is not a full property-management system: do not assume rate/channel management, housekeeping task history/workload boards, or accounting integrations.
+Hotel operations includes configurable rooms, date-bounded special rates, date-based booking quotes, a housekeeping board and room-linked maintenance orders. Each room can optionally connect to a partner calendar, or share its Stockroom availability link with a compatible channel. Imported dates appear in room availability for reception planning. See Chapter 29 for the setup steps and the hotel, B&B and nightclub daily workflows.
 
 ### Nightlife operations
 
-Create an event with its date, capacity and event information. Add or search guests on the guest list, create admission invoices/payment records, assign a host/door lead where offered, and use QR check-in at entry. Configure customer event booking links where used. If tables/tabs are also enabled, configure tables/menu/bills there and connect event reservations/tabs to the event. Admission is separate from food/drink table billing.
+Create an event with its date, total capacity, guest-facing description and operations plan. Set a General price and optional VIP price and limit. The operations plan can hold the run of show, setup steps and staff handoffs. Add guests with a General, VIP, Promoter or Regular guest category and select the ticket type. When admission or ticket-type capacity is full, staff or customers can join the waitlist; staff promote a guest when space opens, after which the admission invoice and QR check-in flow applies. If Tables & tabs is also enabled, configure tables/menu/bills there and connect event reservations/tabs to the event. Admission remains separate from food/drink table billing.
 
-The app supports event/guest/admission/check-in workflows. It is not an integrated ticket marketplace or membership/loyalty system. Confirm online collection and customer notifications are connected before promoting a booking link.
+Nightlife teams can set General and VIP prices and limits, manage the admission list and waitlist, assign event staff, plan the run of show, and check in guests by QR. Private event inquiries become proposals, estimates and invoices. With Tables & tabs enabled, event teams can also coordinate venue reservations and guest tabs. Linked customers can pay eligible invoices online when hosted Paystack is configured.
 
 ## Chapter 18: Devices, staff, branches, and day-to-day controls
 
@@ -865,42 +865,64 @@ These entries are an operational reference transcribed from the current in-app g
 
 > **Scope note:** Move/merge operations retain original orders and prices. Merge is restricted to compatible unpaid bills on the original till/currency. Refunds do not automatically restock prepared items.
 
-#### 29. Hospitality operations: hotels and nightlife
+#### 29. Hospitality operations: hotel reception and nightlife
 
-- In Business settings > Available workspaces, turn on Hotel operations, Nightlife operations, or both. They are separate options that use one Hospitality subscription entitlement and one Hospitality operations destination. Overview labels the destination for the option(s) enabled.
+Stockroom Hospitality helps hotel and bed & breakfast reception teams organise rooms, guest stays, room readiness, check-in and guest charges. Nightlife teams use the same destination for events, admission, guest lists and door check-in. Turn on **Hotel operations**, **Nightlife operations**, or both in **Business settings > Available workspaces**.
 
-- For a hotel, add rooms with nightly rates and keep room status current. Book stays by room and dates; overlapping bookings are rejected and the monthly availability calendar shows room stays.
+##### Hotel and bed & breakfast reception
 
-- Assign a stay manager and housekeeping staff from existing staff who have Hotel operations access in this branch. Set room readiness and a cleaning time. A room must be ready before check-in; checking out marks it dirty.
+1. In **Room register**, enter a **Room name or number**, **Room type**, **Bed setup**, **Maximum guests**, **Nightly rate** and **Amenities**, then choose **Add room**. For a B&B, describe included breakfast and comforts in Amenities. Set up one record for each bookable room.
+2. To add seasonal pricing, use the room’s **Seasonal and special rates** form. Enter a **Rate name**, **First night**, **Last night** and **Rate per night**, then choose **Add rate period**. The room calendar and stay quote use the saved rates for the selected dates.
+3. In **Book a stay**, select a room; enter **Guest name**, **Number of guests**, **Phone**, optional **Email for confirmation and reminder**, **Check in**, **Check out** and any **Notes**; choose a **Stay manager** if assigned; then select **Save booking**. The monthly **Room availability** calendar shows room stays for reception planning.
+4. Prepare arrivals from the **Housekeeping board**. Assign housekeeping staff and a cleaning time on the room. In **Room cleaning checklists**, write the turnover steps that fit the property. Staff mark each task complete; the room becomes ready when its checklist is finished.
+5. On arrival, choose **Check in** from the stay. If the guest has a portal pass, select **Scan guest QR**. Create the stay invoice, record a deposit or payment in **Payments & receipts > Jobs & invoices**, and issue the receipt.
+6. During the stay, use the folio to add a priced extra or a stocked product. Stocked-product charges use the saved product price and reduce branch stock. At departure, settle the stay and folio invoices, select **Check out**, then send housekeeping the room’s fresh turnover checklist.
+7. Share the Hotel customer portal link or QR with guests so they can view rooms, dates and booking quotes. Guests can view linked invoices and pay through hosted Paystack when the business has configured it.
+8. For an Airbnb listing, calendar sync is optional for the business and each room. Copy Airbnb’s calendar link in **Calendar > Availability > Connect calendars**. In Stockroom, open **Booking-channel calendars** for the matching room, name the source **Airbnb**, enter the link and select **Connect and sync**. To send Stockroom dates back, create and copy the Stockroom room link and add it to Airbnb using **Connect to another website**. Stockroom checks for dates about every 15 minutes; Airbnb says its calendar refreshes about every three hours and also provides manual refresh.
+9. Other iCalendar-compatible services can use the same room links. Imported dates appear in the monthly calendar and room availability; Stockroom’s exported room calendar shares reserved dates. The business can continue using Stockroom’s own booking and reception workflow without connecting any partner.
+10. Use **Hospitality performance** at the top of the screen to choose a report month. The hotel report counts occupied room nights (including connected calendar dates), shows occupancy against active room capacity, groups stays by source and totals linked accommodation invoices as billed, paid and due. Use it to review reception activity and follow up balances.
 
-- Create the stay invoice from the booking and use Payments & receipts > Jobs & invoices to record deposits, balances and receipts. During an active stay, add priced folio charges or charge stocked products. Stock is deducted when the stocked-product invoice is created. Check-out is blocked while stay/folio invoices have a balance due.
+##### Nightclub event and reception workflow
 
-- For nightlife, create an event with its time, optional capacity and admission price. Assign an event host and door lead from staff who have Nightlife operations access. Add guests; paid entries need an invoice paid in full before check-in. Free entries can be checked in without an invoice.
+1. In **Create an event**, enter the event name, guest-facing description, run of show, start time, total capacity and admission price. Add an optional VIP ticket name, price and limit. Select the event host and door staff lead, then choose **Create event**.
+2. From the event guest list, enter a guest’s name and phone, optional email, choose a guest category and ticket type, and select **Add guest or waitlist**. The event view keeps expected guests, checked-in guests and the waitlist together.
+3. A paid admission reserved through the guest portal creates its linked invoice and opens hosted Paystack checkout when online collection is configured. Staff can create an admission invoice from an event guest row for an in-person booking. At the door, choose **Scan admission QR** or **Check in**. After the event starts, staff can mark an expected guest as a no-show. When a place opens, choose **Promote from waitlist**; the guest receives a waitlist email when cloud email is configured and a paid admission invoice is prepared.
+4. Handle birthdays, celebrations and venue-hire requests in **Private event inquiries**. Review the date, guest count and contact details; write proposal terms and a quote; choose **Create estimate for customer**; then convert an accepted estimate to an invoice to record a deposit and balance.
+5. With **Tables & tabs** enabled, connect event table reservations and venue tabs to the event. Use that workspace for food, drinks and table bills while Hospitality manages event admission and guest entry.
+6. Share the Nightlife customer portal link so guests can request event places or send a private-event inquiry. Guests can pay issued invoices through hosted Paystack when configured for the business.
+7. In **Hospitality performance**, choose the month to review event count, reserved admissions, door check-ins and linked admission invoices. The event rows show paid admission totals so managers can compare attendance and collected payments.
 
-- Customer-created hotel and event bookings show a QR pass in the customer portal. Use Scan guest QR or Scan admission QR at the venue; staff-entered bookings can be checked in with the staff action. Passes are single-use. Customer booking requires an internet connection.
+##### Guest messages, ticket offers, forms and bottle-service packages
 
-- If Tables & tabs is enabled, event table reservations and venue tabs link to the nightlife event. Configure tables, menus and bills in Tables & tabs; that workspace continues to handle food, drinks and settlement.
+1. In the event setup form, enter a main **Promo code**, **Discount percentage** and **Maximum uses**. Add more codes in **More promotions**, one per line as `CODE|discount percent|maximum uses|ticket type ID`; leave the ticket type blank to allow every ticket. Add a ticket type ID such as `vip` to limit a code to that ticket. A maximum of `0` means unlimited. Give the codes to the guests you want to reward. In the customer portal, guests enter a code before reserving admission; Stockroom checks it and its remaining uses, then applies the discount to that ticket’s invoice amount.
+2. Add attendee questions one per line. Write the question followed by `[text]`, `[email]` or `[number]`; add `*` to require an answer. For example, `Dietary requirements [text] *` and `Contact email [email]`. Guests complete these fields in the event booking form, and Stockroom checks required answers and answer types before saving the booking.
+3. Set **Free cancellation until (hours before event)**, **Cancellation policy** and **No-show policy** during event setup. Open the event’s **Save event plan and policies** form to update those terms while the event is scheduled. Guests see the policy in the portal, and cancellation requests after the stated cutoff are declined by the booking workflow.
+4. For table service, enter the main **Package name**, **Package details**, **Minimum spend** and **Maximum package reservations** during event setup. Add more packages in **More packages**, one per line as `package name|description|minimum spend|maximum reservations|optional included items`. For the main package, choose its included stocked bar menu items and quantities. For additional packages, list exact stocked bar menu names and quantities in the fifth field, such as `Premium Vodka=1;Tonic=4`. Guests can select a package when reserving a table; Stockroom carries the description, package contents and minimum spend onto its linked Tables & tabs bill.
+5. Staff open the linked reservation in **Tables & tabs** and choose **Add included bottles to bar order**. Review and submit the package items as a normal bar order, then prepare and serve them through the usual bar workflow. Stockroom deducts the linked stock when preparation starts. Add any additional food and drink orders to the same bill. The app prevents closing the package bill below its minimum spend.
+6. Guests with an email address on a saved stay, event admission or event table can receive a booking confirmation and a reminder within 24 hours. Status emails cover cancellations, hotel/event no-shows and waitlist promotions. The Stockroom cloud service must have Gmail delivery credentials configured. Portal guests enter their email in the booking form; staff can enter it on hotel stays and event guest entries.
 
-- Guests can make bookings through the customer portal as a guest or sign in to link them to a customer account. The portal shows booking and invoice balances but does not collect the hotel/admission invoice payment; staff record payment in Jobs & invoices. A linked customer wallet can be used by staff when enabled by payment policy.
+##### Connect Paystack and customise guest email
 
-##### Market comparison: hotel operations
+The business owner can manage both connections in **Settings > Business settings > Paystack and guest email**. This is a business-specific setup; each business connects its own Paystack merchant account.
 
-The comparison below uses the Stockroom implementation in this workspace and public feature pages from specialist products, reviewed 16 October 2026. It is a workflow comparison, not a claim that every hotel needs every feature. Cloudbeds describes a unified hotel platform with channel management, a reservation calendar, housekeeping and maintenance, revenue management, payments, reporting, direct booking and guest engagement. Little Hotelier describes the common small-property combination of a PMS, direct booking engine and channel manager, with front-desk, housekeeping, rates, payments and guest communications. See [Cloudbeds hotel management features](https://www.cloudbeds.com/hotel-management-software/) and [Little Hotelier’s PMS guide](https://www.littlehotelier.com/blog/learn-about-tech/property-management-system-pms/).
+1. In the business's Paystack dashboard, copy its secret key. In Stockroom, paste it into **Paystack secret key**. Start with a test key while checking the setup.
+2. For hosted hotel or nightlife invoice checkout, leave **Paystack terminal ID** and **Walk-in customer code** blank. For a physical Paystack POS terminal, enter both values; Stockroom requires them as a pair.
+3. Enter the owner password and select **Connect Paystack**. Stockroom checks the key with Paystack, then stores it encrypted for that business. The key is not shown again. Use **Replace Paystack connection** to rotate it or **Disconnect Paystack** to remove it.
+4. For hosted hospitality invoice payments, add the Stockroom cloud API webhook address ending in `/v1/customer-portal/hospitality/paystack-webhook` to this business's Paystack dashboard. Use the API host provided for the Stockroom deployment. Paystack sends payment events to that address; Stockroom verifies the signature with the matching business key before applying a payment to an invoice. Do not paste a business key into Render or send it to Stockroom staff for manual entry.
+5. In **Guest email identity and templates**, enter the business display name and reply-to address/name. Edit the confirmation, reminder, cancellation, no-show and waitlist-offer messages. The `{guestName}` and `{businessName}` placeholders are filled in when Stockroom prepares a message. Enter the owner password and select **Save email settings**.
+6. Review **Guest email activity** for the saved message text, recipient, reply-to and status. **Accepted** means Gmail accepted Stockroom's send request; it does not confirm delivery or reading. Failed and uncertain sends show an error or support instruction. Stockroom's Gmail API sender must be configured for messages to send, but businesses do not need to provide their Gmail credentials.
 
-| Hotel task | Stockroom implementation | Comparison and practical decision |
-| --- | --- | --- |
-| Room setup, nightly price and availability | Room records have a nightly rate and active/maintenance/inactive status. Staff create bookings for a room and date range; overlaps are rejected, with a monthly room calendar. The customer portal also accepts stay bookings. | Covers a small property’s basic room-and-stay workflow. The inspected code has one saved nightly rate per room, not seasonal/rate plans or dynamic pricing. |
-| Arrival, departure and room readiness | Staff can check guests in/out. Housekeeping status supports ready, dirty and cleaning; a room can have assigned staff and a scheduled cleaning time. Check-in waits until the room is ready; checkout marks it dirty. | Useful front-desk and room-turnover controls. The code does not provide a task queue, housekeeping workload/history board, or maintenance-request workflow. |
-| Guest billing | Staff create stay invoices, record deposits and balances through shared Jobs & invoices, and add extra or stocked-product charges to an active stay. | Supports a basic guest folio and stock-linked charges. Hotel invoice payment is recorded by staff; the guest portal displays balances but does not take that invoice payment. |
-| Distribution and guest relationship | Customer bookings are available through Stockroom’s customer portal. | The inspected hotel code does not show OTA/channel synchronization, a hotel website booking engine, guest-message automation, hotel-specific guest preference profiles, or hotel occupancy/revenue analytics. If those are essential, plan a connected specialist system or confirm a suitable integration before launch. |
+For a hotel, enter **Free cancellation until (hours before check-in)**, the cancellation terms and the no-show terms in each room’s add/edit form. The customer portal displays these room terms when a guest selects that room. Portal reservations supply the guest email used by scheduled messages.
 
-##### Market comparison: nightlife operations
+These reception and venue workflows connect guest service with the business's existing products, stock, payments, staff and receipts. Each business owner connects its Paystack account in Stockroom, then adds the shared Stockroom webhook address to that business's Paystack dashboard. Stockroom keeps each merchant key encrypted and associated with the correct business.
 
-The nightlife comparison uses the same Stockroom source review and public feature pages from [SevenRooms’ nightlife platform](https://sevenrooms.com/newcustomer/nightlife/) and [Tripleseat’s bar and nightclub event tools](https://tripleseat.com/industries/bars-nightclubs/). SevenRooms describes guest lists and reservations, VIP profiles, table/floorplan operations, ticketed events, waitlists, payments and marketing automation. Tripleseat describes event inquiries, proposals/contracts, deposits and online payment, packages and a shared run-of-show.
+##### Learning from hotel and event platforms
 
-Stockroom’s code supports scheduled events, optional capacity and admission price, named guest entries, staff host/door assignments, invoices, paid-entry checks, QR check-in, and cancellation/closure. When Tables & tabs is enabled, venue table reservations and tabs can be associated with events. This provides a practical event-admission and venue-sales workflow. The reviewed code does not show a nightlife waitlist, VIP tagging/guest marketing, online ticket checkout, table-minimum/package sales, event inquiry inbox, digital contracts, or a run-of-show planner. A venue that depends on those functions should evaluate a specialist product or integration alongside Stockroom.
+Hotel products such as [Cloudbeds](https://www.cloudbeds.com/channel-manager/) and [Little Hotelier](https://www.littlehotelier.com/) show how operators can grow from room setup and front-desk work into channel distribution, guest communication and operational reporting. Stockroom gives reception teams a connected place for rooms, stays, housekeeping, maintenance, guest invoices and stocked-product charges. Optional calendar links coordinate availability dates with external listings. Direct reservation and rate synchronization uses the booking provider's approved API. Booking.com requires a connected provider/property relationship and enabled API access; see the [Connectivity API guide](https://developers.booking.com/connectivity/docs) and [property connection requirements](https://developers.booking.com/connectivity/docs/connections-api/mapping-connections). Stockroom must first receive partner access and the property must be connected.
 
-Use these comparisons as a setup decision. Stockroom can be the operational record for the hotel or event workflows listed above; add another system where the business depends on the missing distribution, guest-engagement, event-sales, or planning functions. Recheck the current product and integration details before committing, because third-party products and Stockroom change over time.
+Nightlife platforms such as [SevenRooms](https://sevenrooms.com/newcustomer/nightlife/) and event services such as [Eventbrite](https://www.eventbrite.com/features/registration/) show ways to build a guest journey around reservations, ticket sales, VIP packages, communications and event reporting. Stockroom brings event setup, ticket tiers, guest lists, capacity, waitlists, private-event quotes, payment records, QR entry and venue tabs into the business workflow.
+
+Owners get the best from Stockroom by setting up each room or event carefully, training staff on arrival and door procedures, and recording each guest charge. As the business grows, new tools can build on that reception and venue foundation.
 
 #### 30. Cash register
 
