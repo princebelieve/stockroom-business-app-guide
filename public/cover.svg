@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Stockroom Business App by S. B. Ibhadode</title>
+  <desc id="desc">A practical business-school guide to setting up and using Stockroom Business App.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#ecebdd"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#164e43"/><stop offset="1" stop-color="#2b7963"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#paper)"/>
+  <circle cx="1050" cy="100" r="240" fill="none" stroke="#164e43" stroke-opacity=".1" stroke-width="2"/>
+  <circle cx="1050" cy="100" r="195" fill="none" stroke="#164e43" stroke-opacity=".12" stroke-width="2"/>
+  <rect x="84" y="79" width="56" height="56" rx="17" fill="url(#green)"/>
+  <text x="112" y="119" text-anchor="middle" fill="#fffefa" font-family="Georgia,serif" font-size="33">S</text>
+  <text x="164" y="104" fill="#33463e" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="3">A PRACTICAL BUSINESS-SCHOOL HANDBOOK</text>
+  <text x="84" y="276" fill="#183d35" font-family="Georgia,serif" font-size="74">Stockroom Business App</text>
+  <text x="84" y="360" fill="#183d35" font-family="Georgia,serif" font-size="72">by S. B. Ibhadode</text>
+  <text x="88" y="440" fill="#52665b" font-family="Georgia,serif" font-size="28">A practical guide to setup, workspaces, and daily business operations</text>
+  <rect x="87" y="506" width="9" height="54" rx="4" fill="#c8753c"/>
+  <text x="116" y="542" fill="#43574d" font-family="Arial,sans-serif" font-size="22" font-weight="600">22 chapters · 43 operator guides · reader edition</text>
+</svg>
