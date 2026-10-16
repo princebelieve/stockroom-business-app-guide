@@ -8,8 +8,9 @@ const css = await readFile(path.join(siteDir, 'assets', 'book.css'), 'utf8');
 const js = await readFile(path.join(siteDir, 'assets', 'book.js'), 'utf8');
 const pdfName = 'Stockroom-Business-App-by-S-B-Ibhadode.pdf';
 const publicDir = path.join(siteDir, 'public');
+const defaultSiteUrl = 'https://stockroombusinessappguide.globalcreest.com';
 const configuredUrl = process.argv.find(arg => arg.startsWith('--site-url='))?.slice('--site-url='.length)
-  || process.env.BOOK_SITE_URL || '';
+  || process.env.BOOK_SITE_URL || defaultSiteUrl;
 const siteUrl = configuredUrl.replace(/\/$/, '');
 
 function escapeHtml(value) {
@@ -105,6 +106,7 @@ const chapter21 = markdown.split('### In-app Help chapters')[1] || '';
 const referenceCount = (chapter21.match(/^#### \d+\./gm) || []).length;
 const description = 'A practical guide to setting up and using Stockroom Business App, with workspace walkthroughs for retail, oil sales, services, restaurants, hotels, nightlife and more.';
 const canonical = siteUrl ? `<link rel="canonical" href="${siteUrl}/">` : '';
+const socialImage = siteUrl ? `${siteUrl}/cover.svg` : 'cover.svg';
 const bookUrl = siteUrl ? `"url":"${siteUrl}/",` : '';
 
 const page = `<!doctype html>
@@ -116,9 +118,9 @@ const page = `<!doctype html>
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#f1f0e9">
 <meta property="og:type" content="book"><meta property="og:title" content="${escapeHtml(title)}">
-<meta property="og:description" content="${escapeHtml(description)}"><meta property="og:image" content="cover.svg">
+<meta property="og:description" content="${escapeHtml(description)}"><meta property="og:image" content="${socialImage}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}">
-<meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="cover.svg">
+<meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${socialImage}">
 ${canonical}
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/book.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book",${bookUrl}"name":"${escapeHtml(title)}","author":{"@type":"Person","name":"S. B. Ibhadode"},"inLanguage":"en","genre":"Business education","bookFormat":"https://schema.org/EBook","abstract":"${escapeHtml(description)}","workExample":{"@type":"Book","bookFormat":"https://schema.org/PDF","encodingFormat":"application/pdf","name":"Download the complete book"}}</script>

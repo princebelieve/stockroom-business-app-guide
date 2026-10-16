@@ -5,12 +5,11 @@ import { fileURLToPath } from 'node:url';
 const project = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(project, 'public');
 const indexPath = path.join(publicDir, 'index.html');
-const vercelProductionHost = (process.env.VERCEL_PROJECT_PRODUCTION_URL || '').trim();
-const siteUrl = (process.env.BOOK_SITE_URL || (vercelProductionHost ? `https://${vercelProductionHost}` : '')).trim().replace(/\/$/, '');
+const defaultSiteUrl = 'https://stockroombusinessappguide.globalcreest.com';
+const siteUrl = (process.env.BOOK_SITE_URL || defaultSiteUrl).trim().replace(/\/$/, '');
 const isVercel = process.env.VERCEL === '1';
 const isProduction = !isVercel || process.env.VERCEL_ENV === 'production';
-// Production is crawlable even if a custom canonical domain has not been set.
-// Vercel's production host is used as a canonical fallback when available.
+// Production uses the public custom domain by default; previews stay noindex.
 const canIndex = isProduction;
 let html = await readFile(indexPath, 'utf8');
 
