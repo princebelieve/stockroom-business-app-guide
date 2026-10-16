@@ -49,7 +49,7 @@ The app is useful when a business needs a repeatable record of what was sold or 
 
 Stockroom is designed for offline-first day-to-day use in supported workflows. Initial registration, connecting devices, subscription checks, remote ordering, and some online services need connectivity. Businesses should synchronize when they need changes shared across devices and review the sync status before depending on cross-device updates.
 
-Use Stockroom when its actual workflow matches the business. Do not infer specialist support from a business label. For example, a pharmacy business type can help organise product suggestions, but it does not add prescription dispensing. A hotel option covers specified stay and room work, not every property-management or accounting function.
+The Hotel and Nightlife workspaces support room stays, housekeeping readiness, event admissions, QR check-in, and related billing and venue sales. Chapter 17 walks through those workflows, and its market comparison helps owners decide whether the built-in tools fit their property or venue. A business label selects relevant setup suggestions; workspace settings and the actual operating workflow determine what the app can do.
 
 ### Why use it?
 
@@ -883,7 +883,24 @@ These entries are an operational reference transcribed from the current in-app g
 
 - Guests can make bookings through the customer portal as a guest or sign in to link them to a customer account. The portal shows booking and invoice balances but does not collect the hotel/admission invoice payment; staff record payment in Jobs & invoices. A linked customer wallet can be used by staff when enabled by payment policy.
 
-> **Scope note:** Hospitality reuses existing staff accounts, branch permissions, Jobs & invoices, stock, customer accounts and Tables & tabs. It is not a full hotel PMS or ticketing/accounting system. There is no separate hospitality staff directory, housekeeping task history/workload board, direct online invoice payment, or ticket marketplace.
+##### Market comparison: hotel operations
+
+The comparison below uses the Stockroom implementation in this workspace and public feature pages from specialist products, reviewed 16 October 2026. It is a workflow comparison, not a claim that every hotel needs every feature. Cloudbeds describes a unified hotel platform with channel management, a reservation calendar, housekeeping and maintenance, revenue management, payments, reporting, direct booking and guest engagement. Little Hotelier describes the common small-property combination of a PMS, direct booking engine and channel manager, with front-desk, housekeeping, rates, payments and guest communications. See [Cloudbeds hotel management features](https://www.cloudbeds.com/hotel-management-software/) and [Little Hotelier’s PMS guide](https://www.littlehotelier.com/blog/learn-about-tech/property-management-system-pms/).
+
+| Hotel task | Stockroom implementation | Comparison and practical decision |
+| --- | --- | --- |
+| Room setup, nightly price and availability | Room records have a nightly rate and active/maintenance/inactive status. Staff create bookings for a room and date range; overlaps are rejected, with a monthly room calendar. The customer portal also accepts stay bookings. | Covers a small property’s basic room-and-stay workflow. The inspected code has one saved nightly rate per room, not seasonal/rate plans or dynamic pricing. |
+| Arrival, departure and room readiness | Staff can check guests in/out. Housekeeping status supports ready, dirty and cleaning; a room can have assigned staff and a scheduled cleaning time. Check-in waits until the room is ready; checkout marks it dirty. | Useful front-desk and room-turnover controls. The code does not provide a task queue, housekeeping workload/history board, or maintenance-request workflow. |
+| Guest billing | Staff create stay invoices, record deposits and balances through shared Jobs & invoices, and add extra or stocked-product charges to an active stay. | Supports a basic guest folio and stock-linked charges. Hotel invoice payment is recorded by staff; the guest portal displays balances but does not take that invoice payment. |
+| Distribution and guest relationship | Customer bookings are available through Stockroom’s customer portal. | The inspected hotel code does not show OTA/channel synchronization, a hotel website booking engine, guest-message automation, hotel-specific guest preference profiles, or hotel occupancy/revenue analytics. If those are essential, plan a connected specialist system or confirm a suitable integration before launch. |
+
+##### Market comparison: nightlife operations
+
+The nightlife comparison uses the same Stockroom source review and public feature pages from [SevenRooms’ nightlife platform](https://sevenrooms.com/newcustomer/nightlife/) and [Tripleseat’s bar and nightclub event tools](https://tripleseat.com/industries/bars-nightclubs/). SevenRooms describes guest lists and reservations, VIP profiles, table/floorplan operations, ticketed events, waitlists, payments and marketing automation. Tripleseat describes event inquiries, proposals/contracts, deposits and online payment, packages and a shared run-of-show.
+
+Stockroom’s code supports scheduled events, optional capacity and admission price, named guest entries, staff host/door assignments, invoices, paid-entry checks, QR check-in, and cancellation/closure. When Tables & tabs is enabled, venue table reservations and tabs can be associated with events. This provides a practical event-admission and venue-sales workflow. The reviewed code does not show a nightlife waitlist, VIP tagging/guest marketing, online ticket checkout, table-minimum/package sales, event inquiry inbox, digital contracts, or a run-of-show planner. A venue that depends on those functions should evaluate a specialist product or integration alongside Stockroom.
+
+Use these comparisons as a setup decision. Stockroom can be the operational record for the hotel or event workflows listed above; add another system where the business depends on the missing distribution, guest-engagement, event-sales, or planning functions. Recheck the current product and integration details before committing, because third-party products and Stockroom change over time.
 
 #### 30. Cash register
 
