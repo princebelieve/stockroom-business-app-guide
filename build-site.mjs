@@ -3,7 +3,6 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const siteDir = path.dirname(fileURLToPath(import.meta.url));
-const projectDir = path.resolve(siteDir, '..');
 const markdown = await readFile(path.join(siteDir, 'book.md'), 'utf8');
 const css = await readFile(path.join(siteDir, 'assets', 'book.css'), 'utf8');
 const js = await readFile(path.join(siteDir, 'assets', 'book.js'), 'utf8');
@@ -144,7 +143,7 @@ const standalone = page.replace('<link rel="stylesheet" href="assets/book.css">'
   .replace('<script src="assets/book.js" defer></script>', `<script>\n${js}\n</script>`)
   .replaceAll('href="favicon.svg"', 'href="site/public/favicon.svg"')
   .replaceAll('content="cover.svg"', 'content="site/public/cover.svg"');
-await writeFile(path.join(projectDir, 'book-reader.html'), standalone, 'utf8');
+await writeFile(path.join(siteDir, 'book-reader.html'), standalone, 'utf8');
 
 await writeFile(path.join(publicDir, 'robots.txt'), `User-agent: *\nAllow: /\n${siteUrl ? `Sitemap: ${siteUrl}/sitemap.xml\n` : ''}`, 'utf8');
 if (siteUrl) {
